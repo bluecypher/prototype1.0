@@ -11,10 +11,10 @@ app.use(express.urlencoded({
 }));
 
 app.use(cors());
-const port = process.env.PORT
+const port = process.env.APP_PORT || process.env.PORT
 
 app.use("/users", router);
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
